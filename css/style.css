@@ -1,0 +1,384 @@
+/* --- 1. POLICES ET CHARTE GRAPHIQUE (:root) --- */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --surface2: #eceff7;
+  --text: #12172b;
+  --muted: #5a6280;
+  --border: #dde2ef;
+  --primary: #4f46e5;
+  --on-primary: #ffffff;
+  --err: #ff4d4d;
+  --info: #1d6fb8;
+  --shadow:
+    0 1px 2px rgba(18, 23, 43, 0.06), 0 10px 28px rgba(79, 70, 229, 0.12);
+  --head: "Space Grotesk", sans-serif;
+  --sans: "DM Sans", sans-serif;
+  color-scheme: light;
+}
+
+/* Mode sombre automatique (prefers-color-scheme) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0f1f;
+    --surface: #131933;
+    --surface2: #1b2245;
+    --text: #eef1fb;
+    --muted: #9aa3c4;
+    --border: #272f55;
+    --primary: #8b93ff;
+    --on-primary: #0b0f1f;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 28px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+
+/* --- 2. BASE ET LAYOUT --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--head);
+  color: var(--text);
+}
+
+/* Surcharge de la classe Bootstrap pour garantir la lisibilité du texte secondaire */
+.text-muted {
+  color: var(--muted) !important;
+}
+
+/* Fond adapté pour les blocs d'information */
+.bg-surface2 {
+  background-color: var(--surface2) !important;
+  border: 1px solid var(--border);
+}
+
+/* Navigation */
+.navbar {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.navbar .nav-link {
+  color: var(--text);
+  font-weight: 500;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--primary);
+}
+.navbar-toggler {
+  border-color: var(--border);
+}
+
+/* Logos réactifs Clair / Sombre */
+.logo-clair,
+.logo-sombre {
+  height: 40px;
+  width: auto;
+}
+.logo-clair {
+  display: inline-block;
+}
+.logo-sombre {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo-clair {
+    display: none;
+  }
+  .logo-sombre {
+    display: inline-block;
+  }
+  .navbar-toggler-icon {
+    filter: invert(1);
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: var(--primary);
+}
+
+/* --- 3. PAGE D'ACCUEIL --- */
+.carrousel-conteneur {
+  max-width: 900px;
+}
+
+.carte-avis {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  height: 100%;
+}
+
+.partenaires-section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.logo-partenaire {
+  max-height: 40px;
+  width: auto;
+  opacity: 0.85;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.logo-partenaire:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* --- 4. BOUTIQUE (Grille Grid max 6 cartes/ligne) --- */
+.grille-boutique {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 1200px) {
+  .grille-boutique {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.carte-produit {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.carte-produit:hover {
+  transform: translateY(-5px);
+}
+
+/* --- 5. FORMULAIRES, BOUTONS ET ERREURS --- */
+.boite-connexion {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.groupe-champ {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.label-saisie {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.champ-saisie,
+textarea.champ-saisie {
+  width: 100%;
+  background-color: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.champ-saisie:focus {
+  outline: 3px solid var(--info);
+  border-color: transparent;
+}
+
+.bouton-action {
+  width: 100%;
+  padding: 11px;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+
+.bouton-action:hover {
+  opacity: 0.9;
+}
+.bouton-action:active {
+  transform: scale(0.98);
+}
+
+.separateur {
+  text-align: center;
+  margin: 18px 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Bouton Google */
+.bouton-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background-color: var(--surface2);
+  color: var(--text);
+  padding: 11px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.bouton-google:hover {
+  filter: brightness(0.95);
+}
+
+.style-lien-oublie {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Bascule Connexion / Inscription CSS */
+.formulaire-bloc {
+  display: none;
+}
+#choix-connexion:checked ~ #box-connexion {
+  display: block;
+}
+#choix-inscription:checked ~ #box-inscription {
+  display: block;
+}
+
+.boite-connexion .d-flex.mb-4 {
+  border-bottom: 2px solid var(--border);
+}
+.btn-onglet {
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+#choix-connexion:checked ~ .d-flex label[for="choix-connexion"],
+#choix-inscription:checked ~ .d-flex label[for="choix-inscription"] {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Gestion dynamique des erreurs (:user-invalid) */
+.message-erreur {
+  display: none;
+  color: var(--err);
+  font-size: 12px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.champ-saisie:user-invalid {
+  border-color: var(--err) !important;
+}
+
+.champ-saisie:user-invalid + .message-erreur {
+  display: block;
+}
+
+/* Espacement sous la ligne label + mot de passe oublié */
+.groupe-champ .d-flex {
+  margin-bottom: 6px;
+}
+
+/* S'assure que tous les labels ont bien une marge en dessous */
+.label-saisie {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--text);
+  display: inline-block;
+}
+
+/* --- 6. ACCORDÉONS FAQ (details / summary) --- */
+details.carte-faq {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+details.carte-faq summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+details.carte-faq summary::-webkit-details-marker {
+  display: none;
+}
+details.carte-faq[open] {
+  background-color: var(--surface2);
+}
+
+/* --- 7. PAGE À PROPOS --- */
+.carte-propos {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.minimap {
+  display: block;
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 12px;
+}

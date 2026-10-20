@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boutique Nimbus - Accueil</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="images/logo-clair.webp"
+              alt="Logo Nimbus"
+              class="logo-clair"
+              height="40"
+            />
+            <img
+              src="images/logo-sombre.webp"
+              alt="Logo Nimbus"
+              class="logo-sombre"
+              height="40"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#monMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="monMenu">
+            <ul class="navbar-nav ms-auto me-lg-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/boutique.html">Boutique</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/faq.html">Faq</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/a-propos.html">À propos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/connexion.html">Se connecter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="py-5">
+      <div class="container">
+        <!-- Carrousel Centré et non collé aux bords -->
+        <section class="carrousel-conteneur mx-auto mb-5">
+          <div
+            id="carrouselNimbus"
+            class="carousel slide rounded-4 overflow-hidden shadow"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/banner1.webp"
+                  class="d-block w-100"
+                  alt="Nouvelle collection Boutique Nimbus"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/banner2.webp"
+                  class="d-block w-100"
+                  alt="Offres et promotions exclusives"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/banner3.webp"
+                  class="d-block w-100"
+                  alt="Gammes de produits écoresponsables"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carrouselNimbus"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carrouselNimbus"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Section 3 Avis Clients -->
+        <section class="mb-5">
+          <h2 class="text-center fw-bold mb-4">Ce que disent nos clients</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="carte-avis p-4 text-center">
+                <p class="mb-2">⭐⭐⭐⭐⭐</p>
+                <p class="fst-italic text-muted">
+                  « Une qualité irréprochable et un envoi ultra rapide. Je
+                  recommande vivement ! »
+                </p>
+                <p class="fw-bold mb-0 text-primary">— Sophie M.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="carte-avis p-4 text-center">
+                <p class="mb-2">⭐⭐⭐⭐⭐</p>
+                <p class="fst-italic text-muted">
+                  « Le service client est très réactif et les emballages sont
+                  vraiment soignés. »
+                </p>
+                <p class="fw-bold mb-0 text-primary">— Thomas L.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="carte-avis p-4 text-center">
+                <p class="mb-2">⭐⭐⭐⭐⭐</p>
+                <p class="fst-italic text-muted">
+                  « Articles conformes aux attentes et de grande qualité. Très
+                  satisfait. »
+                </p>
+                <p class="fw-bold mb-0 text-primary">— Camélia R.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5 Partenaires Alignés -->
+        <section class="partenaires-section text-center py-4 rounded-4">
+          <h3 class="h5 fw-bold mb-4">Nos Partenaires</h3>
+          <div
+            class="d-flex justify-content-around align-items-center flex-wrap gap-3 px-3"
+          >
+            <img
+              src="images/partenaire1.webp"
+              alt="Logo du partenaire 1"
+              class="logo-partenaire"
+            />
+            <img
+              src="images/partenaire2.webp"
+              alt="Logo du partenaire 2"
+              class="logo-partenaire"
+            />
+            <img
+              src="images/partenaire3.webp"
+              alt="Logo du partenaire 3"
+              class="logo-partenaire"
+            />
+            <img
+              src="images/partenaire4.webp"
+              alt="Logo du partenaire 4"
+              class="logo-partenaire"
+            />
+            <img
+              src="images/partenaire5.webp"
+              alt="Logo du partenaire 5"
+              class="logo-partenaire"
+            />
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="text-center py-4 mt-5">
+      <div class="container">
+        <a href="mailto:a.rodrigues2@myskolae.fr"
+          >Copyright &copy; RODRIGUES ANTONY - B1</a
+        >
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boutique - Contact</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="../images/logo-clair.webp"
+              alt="Logo Nimbus"
+              class="logo-clair"
+              height="40"
+            />
+            <img
+              src="../images/logo-sombre.webp"
+              alt="Logo Nimbus"
+              class="logo-sombre"
+              height="40"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#monMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="monMenu">
+            <ul class="navbar-nav ms-auto me-lg-3">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="boutique.html">Boutique</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">Faq</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="a-propos.html">À propos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="connexion.html">Se connecter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="fw-bold display-5 mb-2">Contactez-nous</h1>
+          <p class="text-muted">
+            Une question, une remarque ? L'équipe Nimbus est à votre
+            disposition.
+          </p>
+        </div>
+
+        <section
+          class="row g-4 justify-content-center"
+          aria-label="Formulaire et coordonnées de contact"
+        >
+          <!-- Formulaire de contact (Conforme au sujet) -->
+          <div class="col-lg-7">
+            <form
+              class="boite-connexion max-w-none"
+              action="#"
+              method="POST"
+              novalidate
+            >
+              <div class="groupe-champ">
+                <label for="nom-contact" class="label-saisie"
+                  >NOM et Prénom :</label
+                >
+                <input
+                  type="text"
+                  id="nom-contact"
+                  name="nom"
+                  class="champ-saisie"
+                  required
+                />
+                <span class="message-erreur">Veuillez remplir ce champ.</span>
+              </div>
+
+              <div class="groupe-champ">
+                <label for="email-contact" class="label-saisie"
+                  >Adresse e-mail :</label
+                >
+                <input
+                  type="email"
+                  id="email-contact"
+                  name="email"
+                  class="champ-saisie"
+                  required
+                />
+                <span class="message-erreur">Veuillez remplir ce champ.</span>
+              </div>
+
+              <div class="groupe-champ">
+                <label for="message-contact" class="label-saisie"
+                  >Votre message :</label
+                >
+                <textarea
+                  id="message-contact"
+                  name="message"
+                  rows="5"
+                  class="champ-saisie"
+                  required
+                ></textarea>
+                <span class="message-erreur">Veuillez remplir ce champ.</span>
+              </div>
+
+              <input
+                type="submit"
+                value="Envoyer le message"
+                class="bouton-action"
+              />
+            </form>
+          </div>
+
+          <!-- Coordonnées complémentaires -->
+          <div class="col-lg-5">
+            <div
+              class="carte-propos p-4 d-flex flex-column justify-content-between h-100"
+            >
+              <div>
+                <h2 class="h4 fw-bold mb-4">Nos coordonnées</h2>
+                <div class="mb-4">
+                  <p class="fw-bold mb-1">📍 Adresse</p>
+                  <p class="text-muted mb-0">
+                    Campus Eductive, 6 Rue Irvoy, 38000 Grenoble
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <p class="fw-bold mb-1">✉️ Email</p>
+                  <a
+                    href="mailto:a.rodrigues2@myskolae.fr"
+                    class="style-lien-oublie text-decoration-none"
+                    >a.rodrigues2@myskolae.fr</a
+                  >
+                </div>
+                <div class="mb-4">
+                  <p class="fw-bold mb-1">📞 Téléphone</p>
+                  <a
+                    href="tel:+33476460047"
+                    class="style-lien-oublie text-decoration-none"
+                    >+33 4 76 46 00 47</a
+                  >
+                </div>
+              </div>
+              <div class="p-3 bg-surface2 rounded-3 text-center mt-3">
+                <p class="fw-semibold mb-0">Horaires du support</p>
+                <small class="text-muted"
+                  >Du lundi au vendredi : 9h - 18h</small
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="text-center py-4 mt-5">
+      <div class="container">
+        <a href="mailto:a.rodrigues2@myskolae.fr"
+          >Copyright &copy; RODRIGUES ANTONY - B1</a
+        >
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Bloque la soumission et l'infobulle native si des champs sont invalides
+      document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          if (!form.checkValidity()) {
+            e.preventDefault();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
